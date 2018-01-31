@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Owner\Documents\Android Dev\blackwell-pt-trainer-dev\BlackwellPTTrainer.iml" filepath="C:\Users\Owner\Documents\Android Dev\blackwell-pt-trainer-dev\BlackwellPTTrainer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Owner\Documents\Android Dev\blackwell-pt-trainer-dev\app\app.iml" filepath="C:\Users\Owner\Documents\Android Dev\blackwell-pt-trainer-dev\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/blackwell-pt-trainer-dev.iml" filepath="$PROJECT_DIR$/blackwell-pt-trainer-dev.iml" />
     </modules>
   </component>

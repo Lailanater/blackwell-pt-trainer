@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,6 +20,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final int WORKOUTS_FRAGMENT = 0;
+    private static final int STATS_FRAGMENT = 1;
+    private static final int GROUPS_FRAGMENT = 2;
+    private static final int TIPS_FRAGMENT = 3;
+
+    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +118,22 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void updateFragment(int fragmentView) {
+        if (fragmentView == WORKOUTS_FRAGMENT) {
+            fragment = new WorkoutsFragment();
+        } else if (fragmentView == STATS_FRAGMENT) {
+            fragment = new StatsFragment();
+        } else if (fragmentView == GROUPS_FRAGMENT){
+            fragment = new GroupsFragment();
+        } else if (fragmentView == TIPS_FRAGMENT) {
+            fragment = new TipsFragment();
+        }
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.main_view, fragment)
+                .commit();
     }
 
 }
