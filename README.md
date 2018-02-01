@@ -38,6 +38,7 @@ I have previously worked on Android apps by taking Mobile Programming at Appalac
 
 ###### References
 https://github.com/JaysGitLab/cs3240-final-project-Lailanater56
+
 https://github.com/Lailanater56/blackwell-pt-trainer
 
 ### Previous Experience
