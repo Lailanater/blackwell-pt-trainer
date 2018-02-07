@@ -20,13 +20,15 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String TAG = "MainActivity";
+
     private static final int WORKOUTS_FRAGMENT = 0;
     private static final int STATS_FRAGMENT = 1;
     private static final int GROUPS_FRAGMENT = 2;
     private static final int TIPS_FRAGMENT = 3;
 
-    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-    Fragment fragment;
+    android.support.v4.app.FragmentManager mFragmentManager = getSupportFragmentManager();
+    Fragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,19 +122,22 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    /*
+     *  This method is not used yet. Must change the structure around a bit.
+     */
     private void updateFragment(int fragmentView) {
         if (fragmentView == WORKOUTS_FRAGMENT) {
-            fragment = new WorkoutsFragment();
+            mFragment = new WorkoutsFragment();
         } else if (fragmentView == STATS_FRAGMENT) {
-            fragment = new StatsFragment();
+            mFragment = new StatsFragment();
         } else if (fragmentView == GROUPS_FRAGMENT){
-            fragment = new GroupsFragment();
+            mFragment = new GroupsFragment();
         } else if (fragmentView == TIPS_FRAGMENT) {
-            fragment = new TipsFragment();
+            mFragment = new TipsFragment();
         }
-        fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.main_view, fragment)
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentManager.beginTransaction()
+                .replace(R.id.main_view, mFragment)
                 .commit();
     }
 
