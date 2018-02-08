@@ -27,32 +27,18 @@ public class MainActivity extends AppCompatActivity
     private static final int GROUPS_FRAGMENT = 2;
     private static final int TIPS_FRAGMENT = 3;
 
-    android.support.v4.app.FragmentManager mFragmentManager = getSupportFragmentManager();
+    android.support.v4.app.FragmentManager mFragmentManager;
     Fragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
+        updateFragment(WORKOUTS_FRAGMENT);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "You clicked on Today's Workout!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        CalendarView calendarView = findViewById(R.id.calendarView);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-                Toast.makeText(MainActivity.this, "You touched the workout for " + (++month) + "-" + day + "-" + year, Toast.LENGTH_SHORT).show();
-            }
-        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -102,13 +88,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_workouts) {
-            Toast.makeText(this.getApplicationContext(), "You clicked on Workouts!", Toast.LENGTH_SHORT).show();
+            updateFragment(WORKOUTS_FRAGMENT);
         } else if (id == R.id.nav_stats) {
-            Toast.makeText(this.getApplicationContext(), "You clicked on Stats!", Toast.LENGTH_SHORT).show();
+            updateFragment(STATS_FRAGMENT);
         } else if (id == R.id.nav_groups) {
-            Toast.makeText(this.getApplicationContext(), "You clicked on Groups!", Toast.LENGTH_SHORT).show();
+            updateFragment(GROUPS_FRAGMENT);
         } else if (id == R.id.nav_tips) {
-            Toast.makeText(this.getApplicationContext(), "You clicked on Tips!", Toast.LENGTH_SHORT).show();
+            updateFragment(TIPS_FRAGMENT);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -137,7 +123,7 @@ public class MainActivity extends AppCompatActivity
         }
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction()
-                .replace(R.id.main_view, mFragment)
+                .replace(R.id.fragment_container, mFragment)
                 .commit();
     }
 
