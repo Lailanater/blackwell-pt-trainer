@@ -29,13 +29,12 @@ public class MainActivity extends AppCompatActivity
 
     android.support.v4.app.FragmentManager mFragmentManager;
     Fragment mFragment;
+    FloatingActionButton mFloatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        updateFragment(WORKOUTS_FRAGMENT);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,6 +46,21 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mFloatingActionButton = findViewById(R.id.fab);
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mFragment = new WorkoutsDetailFragment();
+                mFragmentManager.beginTransaction()
+                        .addToBackStack("test")
+                        .replace(R.id.fragment_container, mFragment)
+                        .commit();
+                mFloatingActionButton.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        updateFragment(WORKOUTS_FRAGMENT);
     }
 
     @Override
@@ -125,6 +139,9 @@ public class MainActivity extends AppCompatActivity
         mFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, mFragment)
                 .commit();
+
+        if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
+            mFloatingActionButton.setVisibility(View.VISIBLE);
     }
 
 }
