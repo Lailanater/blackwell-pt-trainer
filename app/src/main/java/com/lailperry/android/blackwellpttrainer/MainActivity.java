@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+
+        if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
+            mFloatingActionButton.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -113,15 +116,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    /*
-     *  This method is not used yet. Must change the structure around a bit.
-     */
     private void updateFragment(int fragmentView) {
         if (fragmentView == WORKOUTS_FRAGMENT) {
             mFragment = new WorkoutsFragment();
@@ -137,6 +136,7 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.fragment_container, mFragment)
                 .commit();
 
+        // This code still has a bug in it.
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
     }
