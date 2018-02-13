@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.fragment_container, mFragment)
                 .commit();
 
-        // This code still has a bug in it.
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
     }
