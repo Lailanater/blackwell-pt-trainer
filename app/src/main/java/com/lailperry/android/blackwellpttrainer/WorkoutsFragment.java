@@ -3,6 +3,7 @@ package com.lailperry.android.blackwellpttrainer;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -58,7 +59,7 @@ public class WorkoutsFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private class WorkoutsHolder extends RecyclerView.ViewHolder {
+    private class WorkoutsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mWorkoutName;
         private TextView mWorkoutDescription;
@@ -66,9 +67,20 @@ public class WorkoutsFragment extends Fragment {
 
         public WorkoutsHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.workouts_list, parent, false));
+            itemView.setOnClickListener(this);
 
             mWorkoutName = itemView.findViewById(R.id.workout_name);
             mWorkoutDescription = itemView.findViewById(R.id.workout_description);
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, new WorkoutsDetailFragment(mWorkout))
+                    .addToBackStack("WorkoutsDetailFragment")
+                    .commit();
         }
 
         public void bind(Workout workout) {

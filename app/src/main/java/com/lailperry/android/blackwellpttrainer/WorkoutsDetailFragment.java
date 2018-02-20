@@ -18,9 +18,10 @@ public class WorkoutsDetailFragment extends Fragment {
 
     private TextView mWorkoutName;
     private Button mReadyButton;
+    private Workout mWorkout;
 
-    public WorkoutsDetailFragment() {
-        // Required empty public constructor
+    public WorkoutsDetailFragment(Workout workout) {
+        mWorkout = workout;
     }
 
 
@@ -31,6 +32,7 @@ public class WorkoutsDetailFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_workouts_detail, container, false);
 
         mWorkoutName = v.findViewById(R.id.workoutNameTextView);
+        mWorkoutName.setText(mWorkout.getName());
         mReadyButton = v.findViewById(R.id.readyButton);
         mReadyButton.setOnClickListener(new View.OnClickListener() {
             @Override

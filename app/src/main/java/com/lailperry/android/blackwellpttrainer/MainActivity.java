@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFragment = new WorkoutsDetailFragment();
+                //TODO change this code instead of hard coding
+                Workout workout = new Workout("Week 1 - Monday Workout",
+                        "Monday Workout Description");
+                mFragment = new WorkoutsDetailFragment(workout);
                 mFragmentManager.beginTransaction()
                         .addToBackStack("test")
                         .replace(R.id.fragment_container, mFragment)
