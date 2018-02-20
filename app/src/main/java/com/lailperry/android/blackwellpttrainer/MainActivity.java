@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private static final int STATS_FRAGMENT = 1;
     private static final int GROUPS_FRAGMENT = 2;
     private static final int TIPS_FRAGMENT = 3;
+    private static final int SETTINGS_FRAGMENT = 4;
 
     android.support.v4.app.FragmentManager mFragmentManager;
     Fragment mFragment;
@@ -76,24 +77,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -111,6 +95,8 @@ public class MainActivity extends AppCompatActivity
             updateFragment(GROUPS_FRAGMENT);
         } else if (id == R.id.nav_tips) {
             updateFragment(TIPS_FRAGMENT);
+        } else if (id == R.id.nav_settings) {
+            updateFragment(SETTINGS_FRAGMENT);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -132,6 +118,8 @@ public class MainActivity extends AppCompatActivity
             mFragment = new GroupsFragment();
         } else if (fragmentView == TIPS_FRAGMENT) {
             mFragment = new TipsFragment();
+        } else if (fragmentView == SETTINGS_FRAGMENT) {
+            mFragment = new SettingsFragment();
         }
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction()
