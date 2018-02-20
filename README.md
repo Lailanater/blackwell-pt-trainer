@@ -82,6 +82,6 @@ The workouts are different each day and they don't necessarily follow the same f
 3. Click on 'Open an existing Android Studio Project' and open the downloaded source code
 
 4. Create an Android Virtual Device
- * See this tutorial (https://developer.android.com/studio/run/managing-avds.html)
+   * See this tutorial (https://developer.android.com/studio/run/managing-avds.html)
  
 5. Run the code on your newly created virtual device by clicking on the 'Run app' button in the upper-righthand corner or Shift+F10 on Windows
