@@ -8,26 +8,26 @@
     android:padding="8dp" >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/workout_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="8dp"
-        android:text="Week 1 - Monday Workout"
+        android:text="@string/workout_name"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/workout_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="8dp"
-        android:text="Sprint workout # 1 Ladder and Push-ups Ladder"
+        android:text="@string/workout_description"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/workout_name" />
 </android.support.constraint.ConstraintLayout>
