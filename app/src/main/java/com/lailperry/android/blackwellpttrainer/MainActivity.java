@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity
         }
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction()
+                .addToBackStack(Integer.toString(fragmentView))
                 .replace(R.id.fragment_container, mFragment)
                 .commit();
 
