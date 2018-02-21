@@ -125,10 +125,17 @@ public class MainActivity extends AppCompatActivity
             mFragment = new SettingsFragment();
         }
         mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction()
-                .addToBackStack(Integer.toString(fragmentView))
-                .replace(R.id.fragment_container, mFragment)
-                .commit();
+
+        if (fragmentView != WORKOUTS_FRAGMENT) {
+            mFragmentManager.beginTransaction()
+                    .addToBackStack(Integer.toString(fragmentView))
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+        } else {
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+        }
 
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
