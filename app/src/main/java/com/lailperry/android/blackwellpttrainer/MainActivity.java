@@ -1,6 +1,8 @@
 package com.lailperry.android.blackwellpttrainer;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private static final int STATS_FRAGMENT = 1;
     private static final int GROUPS_FRAGMENT = 2;
     private static final int TIPS_FRAGMENT = 3;
+    private static final int SETTINGS_FRAGMENT = 4;
 
     android.support.v4.app.FragmentManager mFragmentManager;
     Fragment mFragment;
@@ -48,7 +51,10 @@ public class MainActivity extends AppCompatActivity
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFragment = new WorkoutsDetailFragment();
+                //TODO change this code instead of hard coding
+                Workout workout = new Workout("Week 1 - Monday Workout",
+                        "Monday Workout Description");
+                mFragment = new WorkoutsDetailFragment(workout);
                 mFragmentManager.beginTransaction()
                         .addToBackStack("test")
                         .replace(R.id.fragment_container, mFragment)
@@ -74,24 +80,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -109,6 +98,8 @@ public class MainActivity extends AppCompatActivity
             updateFragment(GROUPS_FRAGMENT);
         } else if (id == R.id.nav_tips) {
             updateFragment(TIPS_FRAGMENT);
+        } else if (id == R.id.nav_settings) {
+            updateFragment(SETTINGS_FRAGMENT);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -130,13 +121,22 @@ public class MainActivity extends AppCompatActivity
             mFragment = new GroupsFragment();
         } else if (fragmentView == TIPS_FRAGMENT) {
             mFragment = new TipsFragment();
+        } else if (fragmentView == SETTINGS_FRAGMENT) {
+            mFragment = new SettingsFragment();
         }
         mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, mFragment)
-                .commit();
 
-        // This code still has a bug in it.
+        if (fragmentView != WORKOUTS_FRAGMENT) {
+            mFragmentManager.beginTransaction()
+                    .addToBackStack(Integer.toString(fragmentView))
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+        } else {
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+        }
+
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
     }
