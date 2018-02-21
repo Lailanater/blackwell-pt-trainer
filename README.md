@@ -73,3 +73,15 @@ I have done this before during the Mobile Device Programming class, but I didn't
 * Storing workouts in the database
 
 The workouts are different each day and they don't necessarily follow the same format each time. I'm a little confused on how to store each day's workouts. I will seek out as much help as I can in this area and might see if Dr. Fenwick can be of some help since he teaches Mobile Device Programming.
+
+### Instructions for testing in Android Studio
+1. Download Android Studio (https://developer.android.com/studio/index.html)
+
+2. Download source code and start Android Studio
+
+3. Click on 'Open an existing Android Studio Project' and open the downloaded source code
+
+4. Create an Android Virtual Device
+   * See this tutorial (https://developer.android.com/studio/run/managing-avds.html)
+ 
+5. Run the code on your newly created virtual device by clicking on the 'Run app' button in the upper-righthand corner or Shift+F10 on Windows
