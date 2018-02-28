@@ -16,4 +16,43 @@
     <string name="workout_description">Workout Description</string>
     <string name="today_workout">Today\'s Workout</string>
     <string name="ready">Ready</string>
+    <string name="tips">Tips</string>
+    <string name="push_ups">Push Ups</string>
+    <string name="push_ups_content">Push Ups Content</string>
+    <string name="russian_kicks">Russian Kicks</string>
+    <string name="russian_kicks_content">Russian Kicks Content</string>
+    <string name="air_squats">Air Squats</string>
+    <string name="air_squats_content">Air Squats Content</string>
+    <string name="lunges">Lunges</string>
+    <string name="lunges_content">Lunges Content</string>
+    <string name="situps">Situps</string>
+    <string name="situps_content">Situps Content</string>
+    <string name="high_knees">High Knees</string>
+    <string name="high_knees_content">High Knees Content</string>
+    <string name="crunches">Crunches</string>
+    <string name="crunches_content">Crunches Content</string>
+    <string name="leg_lifts">Leg Lifts</string>
+    <string name="leg_lifts_content">Leg Lifts Content</string>
+    <string name="russian_twist">Russian Twist</string>
+    <string name="russian_twist_content">Russian Twist Content</string>
+    <string name="bicycles">Bicycles</string>
+    <string name="bicycles_content">Bicycles Content</string>
+    <string name="frog_jumps">Frog Jumps</string>
+    <string name="frog_jumps_content">Frog Jumps Content</string>
+    <string name="duck_walks">Duck Walks</string>
+    <string name="duck_walks_content">Duck Walks Content</string>
+    <string name="flutter_kicks">Flutter Kicks</string>
+    <string name="flutter_kicks_content">Flutter Kicks Content</string>
+    <string name="bear_crawl">Bear Crawl</string>
+    <string name="bear_crawl_content">Bear Crawl Content</string>
+    <string name="leg_raises">Leg Raises</string>
+    <string name="leg_raises_content">Leg Raises Content</string>
+    <string name="burpees">Burpees</string>
+    <string name="burpees_content">Burpees Content</string>
+    <string name="mountain_climbers">Mountain Climbers</string>
+    <string name="mountain_climbers_content">Mountain Climbers Content</string>
+    <string name="jumping_jacks">Jumping Jacks</string>
+    <string name="jumping_jacks_content">Jumping Jacks Content</string>
+
+
 </resources>
