@@ -7,12 +7,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-
-import java.util.ArrayList;
-import java.util.List;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -45,14 +45,14 @@ public class WorkoutsFragment extends Fragment {
     private void updateUI() {
         // Dummy code
         List<Workout> workouts = new ArrayList<>();
-        for (int i = 0; i < 2; i++){
-            workouts.add(new Workout("Week " + (i+1) + " - Monday Workout",
+        for (int i = 0; i < 2; i++) {
+            workouts.add(new Workout("Week " + (i + 1) + " - Monday Workout",
                     "Monday Workout Description"));
-            workouts.add(new Workout("Week " + (i+1) + " - Tuesday Workout",
+            workouts.add(new Workout("Week " + (i + 1) + " - Tuesday Workout",
                     "Tuesday Workout Description"));
-            workouts.add(new Workout("Week " + (i+1) + " - Thursday Workout",
+            workouts.add(new Workout("Week " + (i + 1) + " - Thursday Workout",
                     "Thursday Workout Description"));
-            workouts.add(new Workout("Week " + (i+1) + " - Friday Workout",
+            workouts.add(new Workout("Week " + (i + 1) + " - Friday Workout",
                     "Friday Workout Description"));
         }
         mAdapter = new WorkoutsAdapter(workouts);

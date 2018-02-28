@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * Created by Owner on 2/20/2018.
  */
 
-public class SettingsFragment extends Fragment{
+public class SettingsFragment extends Fragment {
 
     public SettingsFragment() {
         // Required empty public constructor
