@@ -15,6 +15,7 @@ public class WorkoutDatabase extends SQLiteOpenHelper {
     private static final String TABLE_WORKOUTS = "workouts";
     private static final String FIELD_NAME = "name";
     private static final String FIELD_DESCRIPTION = "description";
+    private static final String FIELD_COMPLETE = "complete";
 
     public WorkoutDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,6 +24,7 @@ public class WorkoutDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //TODO: Add rawQuery method
+        
     }
 
     @Override
