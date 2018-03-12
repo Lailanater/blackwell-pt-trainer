@@ -10,12 +10,14 @@ public class Workout {
 
     String mName;
     String mDescription;
+    String mContent;
     boolean mComplete;
     UUID id;
 
-    public Workout(String workoutName, String workoutDescription) {
+    public Workout(String workoutName, String workoutDescription, String workoutContent) {
         mName = workoutName;
         mDescription = workoutDescription;
+        mContent = workoutContent;
         mComplete = false;
         id = UUID.randomUUID();
     }
@@ -34,6 +36,14 @@ public class Workout {
 
     public void setDescription(String description) {
         mDescription = description;
+    }
+
+    public String getContent() {
+        return mContent;
+    }
+
+    public void setContent(String content) {
+        mContent = content;
     }
 
     public boolean isComplete() {

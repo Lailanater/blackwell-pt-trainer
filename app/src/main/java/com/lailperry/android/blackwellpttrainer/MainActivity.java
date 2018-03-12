@@ -24,15 +24,17 @@ public class MainActivity extends AppCompatActivity
     private static final int TIPS_FRAGMENT = 3;
     private static final int SETTINGS_FRAGMENT = 4;
 
-    android.support.v4.app.FragmentManager mFragmentManager;
-    Fragment mFragment;
-    FloatingActionButton mFloatingActionButton;
+    public android.support.v4.app.FragmentManager mFragmentManager;
+    public Fragment mFragment;
+    public FloatingActionButton mFloatingActionButton;
+    public static WorkoutDatabase mDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mDB = new WorkoutDatabase(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,10 +50,8 @@ public class MainActivity extends AppCompatActivity
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO change this code instead of hard coding
-                Workout workout = new Workout("Week 1 - Monday Workout",
-                        "Monday Workout Description");
-                mFragment = new WorkoutsDetailFragment(workout);
+                // TODO: CURRENTLY ONLY SELECTS THE FIRST WORKOUT
+                mFragment = new WorkoutsDetailFragment(WorkoutsFragment.getWorkouts().get(0));
                 mFragmentManager.beginTransaction()
                         .addToBackStack("test")
                         .replace(R.id.fragment_container, mFragment)

@@ -17,6 +17,8 @@ import android.widget.Toast;
 public class WorkoutsDetailFragment extends Fragment {
 
     private TextView mWorkoutName;
+    private TextView mWorkoutDescription;
+    private TextView mWorkoutContent;
     private Button mReadyButton;
     private Workout mWorkout;
 
@@ -33,7 +35,11 @@ public class WorkoutsDetailFragment extends Fragment {
 
         mWorkoutName = v.findViewById(R.id.workoutNameTextView);
         mWorkoutName.setText(mWorkout.getName());
-        mReadyButton = v.findViewById(R.id.readyButton);
+        mWorkoutDescription = v.findViewById(R.id.workout_detail_description);
+        mWorkoutDescription.setText(mWorkout.getDescription());
+        mWorkoutContent = v.findViewById(R.id.workout_detail_content);
+        mWorkoutContent.setText(mWorkout.getContent());
+        mReadyButton = v.findViewById(R.id.beginWorkoutButton);
         mReadyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
