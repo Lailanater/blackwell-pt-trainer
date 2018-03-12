@@ -44,6 +44,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:padding="8dp"
         android:background="@android:color/holo_green_dark"
         android:text="@string/begin_workout"
         android:textAlignment="center"
