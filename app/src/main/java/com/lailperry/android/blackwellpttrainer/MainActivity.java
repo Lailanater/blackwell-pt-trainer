@@ -72,6 +72,13 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
 
+        if (!mFragment.equals(new WorkoutsFragment())) {
+            for (int i = 0; i < mFragmentManager.getBackStackEntryCount(); i++) {
+                mFragmentManager.popBackStack();
+            }
+            updateFragment(WORKOUTS_FRAGMENT);
+        }
+
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
     }
