@@ -56,97 +56,97 @@ public class WorkoutsFragment extends Fragment {
         mWorkouts = new ArrayList<>();
         String name = "Monday Workout - Week 1";
         String description = "Sprint workout # 1 Ladder and Push-ups Ladder\n";
-        String content = "Run 400m then Walk 400m\n" +
-                "Run 300m then Walk 300m\n" +
-                "Run 200m then Walk 200m\n" +
-                "Run 100m then walk 100m  Then back up the Ladder  (I.E. 100m again then 200, 300, 400, end)\n" +
+        String content = "Run 400m then Walk 400m\n\n" +
+                "Run 300m then Walk 300m\n\n" +
+                "Run 200m then Walk 200m\n\n" +
+                "Run 100m then walk 100m  Then back up the Ladder  (I.E. 100m again then 200, 300, 400, end)\n\n" +
                 "\n" +
-                "Push-ups: ladder by time\n" +
-                "Max Push-ups for two minutes, rest two minutes\n" +
-                "Max Push-ups for One minute and 30 seconds, rest 1.5 minutes\n" +
-                "Max Push-ups for one minute, rest one minute\n" +
-                "Max Push-ups for 30 seconds, rest 30 seconds then back up the ladder same as the run. \n";
+                "Push-ups: ladder by time\n\n" +
+                "Max Push-ups for two minutes, rest two minutes\n\n" +
+                "Max Push-ups for One minute and 30 seconds, rest 1.5 minutes\n\n" +
+                "Max Push-ups for one minute, rest one minute\n\n" +
+                "Max Push-ups for 30 seconds, rest 30 seconds then back up the ladder same as the run.\n";
         Workout workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Tuesday Workout - Week 1";
         description = "Core work and squats\n";
-        content = "5 rounds of the following, rest two minutes in between rounds.\n" +
-                "15 squats\n" +
-                "10 sit ups\n" +
-                "20 crunches\n" +
-                "20 leg lifts \n" +
-                "20 Russian twist\n" +
+        content = "5 rounds of the following, rest two minutes in between rounds.\n\n" +
+                "15 squats\n\n" +
+                "10 sit ups\n\n" +
+                "20 crunches\n\n" +
+                "20 leg lifts \n\n" +
+                "20 Russian twist\n\n" +
                 "30 Bicycles\n";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Thursday Workout - Week 1";
         description = "Sprint workout #2 Sprint/ Jog for distance and Push-ups for reps\n";
-        content = "Sprint 100m, Jog 100m until you complete a mile\n" +
+        content = "Sprint 100m, Jog 100m until you complete a mile\n\n" +
                 "The distance increase by half a mile each week until you reach 3 miles." +
-                " Keep the miles down until you can keep the Sprint’s and Jog Segments consistent.\n";
+                " Keep the miles down until you can keep the Sprint’s and Jog Segments consistent.\n\n";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Friday Workout - Week 1";
         description = "EARN THE WEEKEND Sprint workout # 3/ Core/ Push-ups\n";
-        content = "Sprints: 100’s for time, 15 min cap\n" +
-                "Set a 15 min running clock and sprint your guts out for 100m then walk back  to the start," +
-                " immediately sprint your guts out again. Repeat this until the clock runs down." +
-                " Your score is total sprints, try and beat this number next time. \n" +
-                "Core and Pushups\n" +
-                "As many rounds as possible in 10 minutes\n" +
-                "A1)10 sit ups\n" +
-                "A2)10 push-ups\n";
+        content = "Sprints: 100’s for time, 15 min cap\n\n" +
+                "Set a 15 min running clock and sprint for 100m then walk back  to the start," +
+                " immediately sprint again. Repeat this until the clock runs down." +
+                " Your score is total sprints, try and beat this number next time. \n\n" +
+                "Core and Pushups\n\n" +
+                "As many rounds as possible in 10 minutes\n\n" +
+                "\t10 sit ups\n\n" +
+                "\t10 push-ups\n\n";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Monday Workout - Week 2";
         description ="Sprints/ Push ups\n";
-        content = "Sprints: “Thirty Sixty’s”\n" +
-                "6 rounds\n" +
-                "Sprint 30 seconds\n" +
-                "Walk 60 seconds\n" +
-                "Push-ups:  Ladder by reps \n" +
-                "For the first set do your max number of push-ups from Monday of last week, rest two minutes\n" +
-                "The second set will be 75% of this number, rest 1.5 minutes\n" +
-                "50% for the 3rd set, rest 1 minute\n" +
-                "25% for the 4th set , rest 30 seconds, then back up the ladder starting with the 25% set.\n" +
+        content = "Sprints: “Thirty Sixty’s”\n\n" +
+                "6 rounds\n\n" +
+                "Sprint 30 seconds\n\n" +
+                "Walk 60 seconds\n\n" +
+                "Push-ups:  Ladder by reps \n\n" +
+                "For the first set do your max number of push-ups from Monday of last week, rest two minutes\n\n" +
+                "The second set will be 75% of this number, rest 1.5 minutes\n\n" +
+                "50% for the 3rd set, rest 1 minute\n\n" +
+                "25% for the 4th set , rest 30 seconds, then back up the ladder starting with the 25% set.\n\n" +
                 "Example:  if I did 40 push-ups in two  minutes last week, then my next set will be 30, then 20, then 10 and so on. ";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Tuesday Workout - Week 2";
         description = "Core/ legs\n";
-        content = "-As many rounds as possible in 5 min\n" +
-                "10 sit ups\n" +
-                "10 frog Jumps\n" +
-                "10 ankle touch with a twist\n" +
-                "Once five minutes is up, rest 3 minutes\n" +
-                "-As many rounds as possible in 5 minutes\n" +
-                "10 crunches\n" +
-                "20m duck walks\n" +
-                "10 Russian twists\n" +
-                "Once five minutes is up, rest 3 minutes\n" +
-                "-As many rounds as possible in 5 minutes \n" +
-                "10 sit ups\n" +
-                "10 walking lunges with a twist\n" +
-                "10 toe touches\n" +
-                "Once five minutes is up, rest 3 minutes\n" +
-                "-As many rounds as possible in 5 minutes\n" +
-                "20 flutter kicks\n" +
-                "20m bear crawl\n" +
-                "20 leg raises\n";
+        content = "-As many rounds as possible in 5 min                                                       \n\n" +
+                "\t10 sit ups\n\n" +
+                "\t10 frog Jumps\n\n" +
+                "\t10 ankle touch with a twist\n\n" +
+                "Once five minutes is up, rest 3 minutes\n\n\n" +
+                "-As many rounds as possible in 5 minutes\n\n" +
+                "\t10 crunches\n\n" +
+                "\t20m duck walks\n\n" +
+                "\t10 Russian twists\n\n" +
+                "Once five minutes is up, rest 3 minutes\n\n\n" +
+                "-As many rounds as possible in 5 minutes \n\n" +
+                "\t10 sit ups\n\n" +
+                "\t10 walking lunges with a twist\n\n" +
+                "\t10 toe touches\n\n" +
+                "Once five minutes is up, rest 3 minutes\n\n\n" +
+                "-As many rounds as possible in 5 minutes\n\n" +
+                "\t20 flutter kicks\n\n" +
+                "\t20m bear crawl\n\n" +
+                "\t20 leg raises\n\n";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
 
         name = "Thursday Workout - Week 2";
         description = " Sprints/ Push ups\n";
-        content = "Sprints: “Sixty One Twentys” \n" +
-                "6 rounds\n" +
-                "All out Sprint for sixty seconds walk for two minutes.\n" +
-                "Push-ups: \n" +
+        content = "Sprints: “Sixty One Twenty's” \n\n" +
+                "6 rounds\n\n" +
+                "All out Sprint for sixty seconds walk for two minutes.\n\n" +
+                "Push-ups: \n\n" +
                 "Push-ups to failure, jog 200m every time your knees touch the ground. Do this until you have completed 80 push ups\n";
         workout = new Workout(name, description, content);
         mWorkouts.add(workout);
