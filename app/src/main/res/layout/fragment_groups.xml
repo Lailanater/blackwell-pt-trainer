@@ -4,7 +4,6 @@
     android:id="@+id/groupsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     tools:context="com.lailperry.android.blackwellpttrainer.GroupsFragment">
 
     <TextView
@@ -13,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:text="This is where all of your groups will be located!"
-        android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

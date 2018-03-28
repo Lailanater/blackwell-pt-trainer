@@ -4,7 +4,6 @@
     android:id="@+id/tipsFrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     tools:context="com.lailperry.android.blackwellpttrainer.TipsFragment">
 
     <LinearLayout
@@ -19,7 +18,7 @@
             android:padding="16dp"
             android:text="@string/tips"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="@string/push_ups"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -39,14 +38,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/push_ups_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/russian_kicks"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -54,14 +53,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/russian_kicks_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/air_squats"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -69,14 +68,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/air_squats_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lunges"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -84,14 +83,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/lunges_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/situps"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -99,14 +98,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/situps_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/high_knees"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -114,14 +113,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/high_knees_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/crunches"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -129,14 +128,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/crunches_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/leg_lifts"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -144,14 +143,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/leg_lifts_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/russian_twist"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -159,14 +158,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/russian_twist_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bicycles"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -174,14 +173,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/bicycles_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/frog_jumps"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -189,14 +188,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/frog_jumps_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/duck_walks"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -204,14 +203,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/duck_walks_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/flutter_kicks"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -219,14 +218,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/flutter_kicks_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bear_crawl"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -234,14 +233,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/bear_crawl_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/leg_raises"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -249,14 +248,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/leg_raises_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/burpees"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -264,14 +263,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/burpees_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/mountain_climbers"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -279,14 +278,14 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/mountain_climbers_content"
-            android:textColor="@android:color/white" />
+             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/jumping_jacks"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            
             android:textStyle="bold" />
 
         <TextView
@@ -294,7 +293,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/jumping_jacks_content"
-            android:textColor="@android:color/white" />
+             />
 
     </LinearLayout>
 
