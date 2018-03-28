@@ -42,35 +42,32 @@ public class FragmentTest {
 
     @Test
     public void fragmentTest() {
-        ViewInteraction floatingActionButton = onView(
-                allOf(withId(R.id.fab),
-                        childAtPosition(
-                                allOf(withId(R.id.fragment_container),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.LinearLayout")),
-                                                1)),
-                                0),
-                        isDisplayed()));
-        floatingActionButton.perform(click());
 
+        // Check that the FAB is visible and then click it
+        onView(withId(R.id.fab))
+                .check(matches(isDisplayed()))
+                .perform(click());
+
+        // Check that the WorkoutsDetailLinearLayout is visible.
         onView(withId(R.id.workoutsDetailLinearLayout))
                 .check(matches(isDisplayed()));
 
-        onView(withId(R.id.beginWorkoutButton))
-                .check(matches(isDisplayed()));
-
-        onView(withId(R.id.fab))
-                .check(matches(not(isDisplayed())));
-
+        // Check that the begin workout button is displayed and click it
         onView(withId(R.id.beginWorkoutButton))
                 .check(matches(isDisplayed()))
                 .perform(click());
 
+        // Make sure the FAB is not visible since we're in the current workout layout
+        onView(withId(R.id.fab))
+                .check(matches(not(isDisplayed())));
+
         pressBack();
 
+        // Make sure that it brings us back to the main workouts page
         onView(withId(R.id.workouts_recycler_view))
                 .check(matches(isDisplayed()));
 
+        // Click on the second tab in the nav drawer (Stats)
         ViewInteraction appCompatImageButton = onView(
                 allOf(withContentDescription("Open navigation drawer"),
                         childAtPosition(
@@ -92,12 +89,15 @@ public class FragmentTest {
                         isDisplayed()));
         navigationMenuItemView.perform(click());
 
+        // Check that the stats page is displayed
         onView(withId(R.id.statsFrameLayout))
                 .check(matches(isDisplayed()));
 
+        // Make sure the FAB is displayed
         onView(withId(R.id.fab))
                 .check(matches(isDisplayed()));
 
+        // Click on the third nav drawer tab (Groups)
         ViewInteraction appCompatImageButton2 = onView(
                 allOf(withContentDescription("Open navigation drawer"),
                         childAtPosition(
@@ -119,12 +119,15 @@ public class FragmentTest {
                         isDisplayed()));
         navigationMenuItemView2.perform(click());
 
+        // Make sure the groups page is displayed
         onView(withId(R.id.groupsLayout))
                 .check(matches(isDisplayed()));
 
+        // Make sure the FAB is displayed
         onView(withId(R.id.fab))
                 .check(matches(isDisplayed()));
 
+        // Click on the fourth tab (Tips)
         ViewInteraction appCompatImageButton3 = onView(
                 allOf(withContentDescription("Open navigation drawer"),
                         childAtPosition(
@@ -146,12 +149,16 @@ public class FragmentTest {
                         isDisplayed()));
         navigationMenuItemView3.perform(click());
 
+        // Make sure that the tips page is displayed
         onView(withId(R.id.tipsFrameLayout))
                 .check(matches(isDisplayed()));
 
+        // Make sure that the FAB is displayed
         onView(withId(R.id.fab))
                 .check(matches(isDisplayed()));
 
+
+        // Click on the fifth tab in the nav drawer (Settings)
         ViewInteraction appCompatImageButton4 = onView(
                 allOf(withContentDescription("Open navigation drawer"),
                         childAtPosition(
@@ -173,17 +180,21 @@ public class FragmentTest {
                         isDisplayed()));
         navigationMenuItemView4.perform(click());
 
+        // Make sure that the settings page is displayed
         onView(withId(R.id.settingsLayout))
                 .check(matches(isDisplayed()));
 
+        // Make sure that the FAB is displayed
         onView(withId(R.id.fab))
                 .check(matches(isDisplayed()));
 
         pressBack();
 
+        // After pressing the back button make sure that it takes us back to the Workouts page
         onView(withId(R.id.workouts_recycler_view))
                 .check(matches(isDisplayed()));
 
+        // Make sure that the FAB is displayed
         onView(withId(R.id.fab))
                 .check(matches(isDisplayed()));
 
