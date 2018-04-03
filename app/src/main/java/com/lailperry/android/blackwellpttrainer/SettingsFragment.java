@@ -1,12 +1,15 @@
 package com.lailperry.android.blackwellpttrainer;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Switch;
 
 /**
  * Created by Owner on 2/20/2018.
@@ -14,7 +17,7 @@ import android.widget.CheckBox;
 
 public class SettingsFragment extends Fragment {
 
-    public CheckBox mThemeCheckBox;
+    public Switch mThemeSwitch;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -27,17 +30,22 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        mThemeCheckBox = v.findViewById(R.id.themeCheckbox);
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
-            mThemeCheckBox.setChecked(true);
-        mThemeCheckBox.setOnClickListener(new View.OnClickListener() {
+        mThemeSwitch = v.findViewById(R.id.themeSwitch);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
+            mThemeSwitch.setChecked(true);
+        }
+        mThemeSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean checked = mThemeCheckBox.isChecked();
+                boolean checked = mThemeSwitch.isChecked();
                 if (checked)
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 else
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("NIGHT_MODE", AppCompatDelegate.getDefaultNightMode());
+                edit.apply();
                 getActivity().recreate();
             }
         });

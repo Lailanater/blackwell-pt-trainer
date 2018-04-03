@@ -53,6 +53,6 @@
     <string name="mountain_climbers_content">Mountain Climbers Content</string>
     <string name="jumping_jacks">Jumping Jacks</string>
     <string name="jumping_jacks_content">Jumping Jacks Content</string>
-
+    <string name="enable_light_mode">Enable Light Mode</string>
 
 </resources>

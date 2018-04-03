@@ -1,7 +1,9 @@
 package com.lailperry.android.blackwellpttrainer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity
     private static final int SETTINGS_FRAGMENT = 4;
 
     public android.support.v4.app.FragmentManager mFragmentManager;
+    public SharedPreferences mSharedPreferences;
     public Fragment mFragment;
     public FloatingActionButton mFloatingActionButton;
     public static WorkoutDatabase mDB;
@@ -34,6 +37,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        int mode = mSharedPreferences.getInt("NIGHT_MODE", AppCompatDelegate.MODE_NIGHT_YES);
+        AppCompatDelegate.setDefaultNightMode(mode);
 
         if (savedInstanceState == null) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
