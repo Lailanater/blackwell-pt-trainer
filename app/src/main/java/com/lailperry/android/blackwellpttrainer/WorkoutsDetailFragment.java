@@ -1,27 +1,33 @@
 package com.lailperry.android.blackwellpttrainer;
 
-
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.gms.fitness.Fitness;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
+@SuppressLint("ValidFragment")
 public class WorkoutsDetailFragment extends Fragment {
 
     private TextView mWorkoutName;
     private TextView mWorkoutDescription;
     private TextView mWorkoutContent;
-    private Button mReadyButton;
+    private Button mStartTimerButton;
+    private Button mBeginRunButton;
     private Workout mWorkout;
 
+    @SuppressLint("ValidFragment")
     public WorkoutsDetailFragment(Workout workout) {
         mWorkout = workout;
     }
@@ -39,11 +45,22 @@ public class WorkoutsDetailFragment extends Fragment {
         mWorkoutDescription.setText(mWorkout.getDescription());
         mWorkoutContent = v.findViewById(R.id.workout_detail_content);
         mWorkoutContent.setText(mWorkout.getContent());
-        mReadyButton = v.findViewById(R.id.beginWorkoutButton);
-        mReadyButton.setOnClickListener(new View.OnClickListener() {
+        mBeginRunButton = v.findViewById(R.id.beginRunButton);
+        mBeginRunButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Today's Workout is now starting!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Fitness.ACTION_TRACK);
+                intent.setType("vnd.google.fitness.activity/running");
+                intent.putExtra("actionStatus", "ActiveActionStatus");
+                startActivity(intent);
+            }
+        });
+        mStartTimerButton = v.findViewById(R.id.startTimerButton);
+        mStartTimerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER);
+                startActivity(intent);
             }
         });
 
