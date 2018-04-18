@@ -5,6 +5,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 /**
  * Created by Owner on 2/21/2018.
  */
@@ -35,12 +41,15 @@ public class WorkoutDatabase extends SQLiteOpenHelper {
         // Upgrade code goes here
     }
 
-    public boolean insertData(String name, String description, String content, boolean completed) {
+    public boolean insertData(String name, String description, ArrayList<String> content, boolean completed) throws JSONException {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(FIELD_NAME, name);
         contentValues.put(FIELD_DESCRIPTION, description);
-        contentValues.put(FIELD_CONTENT, content);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(FIELD_CONTENT, new JSONArray(content));
+        String arrayList = jsonObject.toString();
+        contentValues.put(FIELD_CONTENT, arrayList);
         contentValues.put(FIELD_COMPLETED, completed);
         long result = db.insert(TABLE_WORKOUTS, null, contentValues);
         if (result == -1) {

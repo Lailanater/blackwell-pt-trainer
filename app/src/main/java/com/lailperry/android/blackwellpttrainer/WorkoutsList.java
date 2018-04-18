@@ -1,16 +1,34 @@
 package com.lailperry.android.blackwellpttrainer;
 
-import java.util.List;
+import java.util.ArrayList;
 
-/**
- * Created by Owner on 2/20/2018.
- */
+class WorkoutsList {
+    private static final WorkoutsList ourInstance = new WorkoutsList();
+    private ArrayList<Workout> mWorkouts;
+    private boolean isPopulated;
 
-public class WorkoutsList {
+    private WorkoutsList() {
+        mWorkouts = new ArrayList<Workout>();
+        isPopulated = false;
+    }
 
-    private List<Workout> mWorkouts;
+    static WorkoutsList getInstance() {
+        return ourInstance;
+    }
 
-    public WorkoutsList() {
+    public ArrayList<Workout> getWorkouts() {
+        return mWorkouts;
+    }
 
+    public void setWorkouts(ArrayList<Workout> workouts) {
+        mWorkouts = workouts;
+    }
+
+    public boolean isPopulated() {
+        return isPopulated;
+    }
+
+    public void setPopulated(boolean populated) {
+        isPopulated = populated;
     }
 }

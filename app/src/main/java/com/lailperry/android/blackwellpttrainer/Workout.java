@@ -1,5 +1,6 @@
 package com.lailperry.android.blackwellpttrainer;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -10,11 +11,11 @@ public class Workout {
 
     String mName;
     String mDescription;
-    String mContent;
+    ArrayList<String> mContent;
     boolean mComplete;
     UUID id;
 
-    public Workout(String workoutName, String workoutDescription, String workoutContent) {
+    public Workout(String workoutName, String workoutDescription, ArrayList<String> workoutContent) {
         mName = workoutName;
         mDescription = workoutDescription;
         mContent = workoutContent;
@@ -38,11 +39,11 @@ public class Workout {
         mDescription = description;
     }
 
-    public String getContent() {
+    public ArrayList<String> getContent() {
         return mContent;
     }
 
-    public void setContent(String content) {
+    public void setContent(ArrayList<String> content) {
         mContent = content;
     }
 

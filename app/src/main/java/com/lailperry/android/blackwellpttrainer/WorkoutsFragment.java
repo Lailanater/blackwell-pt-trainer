@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +24,9 @@ public class WorkoutsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private WorkoutsAdapter mAdapter;
-    private static ArrayList<Workout> mWorkouts;
+    private ArrayList<Workout> mWorkouts = WorkoutsList.getInstance().getWorkouts();
 
-    public WorkoutsFragment() {
+    public WorkoutsFragment() throws JSONException {
         populateData();
     }
 
@@ -43,125 +45,128 @@ public class WorkoutsFragment extends Fragment {
         return v;
     }
 
-    public static ArrayList<Workout> getWorkouts() {
-        return mWorkouts;
-    }
-
     private void updateUI() {
         mAdapter = new WorkoutsAdapter(mWorkouts);
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private void populateData() {
-        mWorkouts = new ArrayList<>();
-        String name = "Monday Workout - Week 1";
-        String description = "Sprint workout # 1 Ladder and Push-ups Ladder\n";
-        String content = "Run 400m then Walk 400m\n\n" +
-                "Run 300m then Walk 300m\n\n" +
-                "Run 200m then Walk 200m\n\n" +
-                "Run 100m then walk 100m  Then back up the Ladder  (I.E. 100m again then 200, 300, 400, end)\n\n" +
-                "\n" +
-                "Push-ups: ladder by time\n\n" +
-                "Max Push-ups for two minutes, rest two minutes\n\n" +
-                "Max Push-ups for One minute and 30 seconds, rest 1.5 minutes\n\n" +
-                "Max Push-ups for one minute, rest one minute\n\n" +
-                "Max Push-ups for 30 seconds, rest 30 seconds then back up the ladder same as the run.\n";
-        Workout workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+    private void populateData() throws JSONException {
+        WorkoutsList list = WorkoutsList.getInstance();
+        if (!list.isPopulated()) {
+            String name = "Monday Workout - Week 1";
+            String description = "Sprint workout # 1 Ladder and Push-ups Ladder\n";
+            ArrayList<String> content = new ArrayList<String>();
+            content.add("Run 400m then Walk 400m");
+            content.add("Run 300m then Walk 300m");
+            content.add("Run 200m then Walk 200m");
+            content.add("Run 100m then walk 100m  Then back up the Ladder  (I.E. 100m again then 200, 300, 400, end)     ");
+            content.add("Max Push-ups for two minutes, rest two minutes");
+            content.add("Max Push-ups for One minute and 30 seconds, rest 1.5 minutes");
+            content.add("Max Push-ups for one minute, rest one minute");
+            content.add("Max Push-ups for 30 seconds, rest 30 seconds then back up the ladder same as the run.");
+            Workout workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Tuesday Workout - Week 1";
-        description = "Core work and squats\n";
-        content = "5 rounds of the following, rest two minutes in between rounds.\n\n" +
-                "15 squats\n\n" +
-                "10 sit ups\n\n" +
-                "20 crunches\n\n" +
-                "20 leg lifts \n\n" +
-                "20 Russian twist\n\n" +
-                "30 Bicycles\n";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Tuesday Workout - Week 1";
+            description = "Core work and squats\n";
+            content = new ArrayList<>();
+            content.add("5 rounds of the following, rest two minutes in between rounds.                               \n\n" +
+                    "\t15 squats\n" +
+                    "\t10 sit ups\n" +
+                    "\t20 crunches\n" +
+                    "\t20 leg lifts \n" +
+                    "\t20 Russian twist\n" +
+                    "\t30 Bicycles\n");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Thursday Workout - Week 1";
-        description = "Sprint workout #2 Sprint/ Jog for distance and Push-ups for reps\n";
-        content = "Sprint 100m, Jog 100m until you complete a mile\n\n" +
-                "The distance increase by half a mile each week until you reach 3 miles." +
-                " Keep the miles down until you can keep the Sprint’s and Jog Segments consistent.\n\n";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Thursday Workout - Week 1";
+            description = "Sprint workout #2 Sprint/ Jog for distance and Push-ups for reps\n";
+            content = new ArrayList<>();
+            content.add("Sprint 100m, Jog 100m until you complete a mile                                                 ");
+            content.add("The distance increase by half a mile each week until you reach 3 miles." +
+                    " Keep the miles down until you can keep the Sprint’s and Jog Segments consistent.");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Friday Workout - Week 1";
-        description = "EARN THE WEEKEND Sprint workout # 3/ Core/ Push-ups\n";
-        content = "Sprints: 100’s for time, 15 min cap\n\n" +
-                "Set a 15 min running clock and sprint for 100m then walk back  to the start," +
-                " immediately sprint again. Repeat this until the clock runs down." +
-                " Your score is total sprints, try and beat this number next time. \n\n" +
-                "Core and Pushups\n\n" +
-                "As many rounds as possible in 10 minutes\n\n" +
-                "\t10 sit ups\n\n" +
-                "\t10 push-ups\n\n";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Friday Workout - Week 1";
+            description = "EARN THE WEEKEND Sprint workout # 3/ Core/ Push-ups\n";
+            content = new ArrayList<>();
+            content.add("Set a 15 min running clock and sprint for 100m then walk back  to the start," +
+                    " immediately sprint again. Repeat this until the clock runs down.                                     " +
+                    " Your score is total sprints, try and beat this number next time. \n" +
+                    "Core and Pushups");
+            content.add("As many rounds as possible in 10 minutes\n" +
+                    "\t10 sit ups\n" +
+                    "\t10 push-ups\n");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Monday Workout - Week 2";
-        description ="Sprints/ Push ups\n";
-        content = "Sprints: “Thirty Sixty’s”\n\n" +
-                "6 rounds\n\n" +
-                "Sprint 30 seconds\n\n" +
-                "Walk 60 seconds\n\n" +
-                "Push-ups:  Ladder by reps \n\n" +
-                "For the first set do your max number of push-ups from Monday of last week, rest two minutes\n\n" +
-                "The second set will be 75% of this number, rest 1.5 minutes\n\n" +
-                "50% for the 3rd set, rest 1 minute\n\n" +
-                "25% for the 4th set , rest 30 seconds, then back up the ladder starting with the 25% set.\n\n" +
-                "Example:  if I did 40 push-ups in two  minutes last week, then my next set will be 30, then 20, then 10 and so on. ";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Monday Workout - Week 2";
+            description = "Sprints/ Push ups\n";
+            content = new ArrayList<>();
+            content.add("Sprints: “Thirty Sixty’s”                                                                         \n\n" +
+                    "\t6 rounds\n\n" +
+                    "\t\tSprint 30 seconds\n" +
+                    "\t\tWalk 60 seconds\n");
+            content.add("Push-ups:  Ladder by reps \n\n" +
+                    "\tFor the first set do your max number of push-ups from Monday of last week, rest two minutes\n\n" +
+                    "\tThe second set will be 75% of this number, rest 1.5 minutes\n\n" +
+                    "\t50% for the 3rd set, rest 1 minute\n\n" +
+                    "\t25% for the 4th set , rest 30 seconds, then back up the ladder starting with the 25% set.\n\n\n" +
+                    "Example:  if I did 40 push-ups in two  minutes last week, then my next set will be 30, then 20, then 10 and so on.");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Tuesday Workout - Week 2";
-        description = "Core/ legs\n";
-        content = "-As many rounds as possible in 5 min                                                       \n\n" +
-                "\t10 sit ups\n\n" +
-                "\t10 frog Jumps\n\n" +
-                "\t10 ankle touch with a twist\n\n" +
-                "Once five minutes is up, rest 3 minutes\n\n\n" +
-                "-As many rounds as possible in 5 minutes\n\n" +
-                "\t10 crunches\n\n" +
-                "\t20m duck walks\n\n" +
-                "\t10 Russian twists\n\n" +
-                "Once five minutes is up, rest 3 minutes\n\n\n" +
-                "-As many rounds as possible in 5 minutes \n\n" +
-                "\t10 sit ups\n\n" +
-                "\t10 walking lunges with a twist\n\n" +
-                "\t10 toe touches\n\n" +
-                "Once five minutes is up, rest 3 minutes\n\n\n" +
-                "-As many rounds as possible in 5 minutes\n\n" +
-                "\t20 flutter kicks\n\n" +
-                "\t20m bear crawl\n\n" +
-                "\t20 leg raises\n\n";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Tuesday Workout - Week 2";
+            description = "Core/ legs\n";
+            content = new ArrayList<>();
+            content.add("As many rounds as possible in 5 min                                                       \n" +
+                    "\t10 sit ups\n" +
+                    "\t10 frog Jumps\n" +
+                    "\t10 ankle touch with a twist\n" +
+                    "Once five minutes is up, rest 3 minutes");
+            content.add("As many rounds as possible in 5 minutes\n" +
+                    "\t10 crunches\n" +
+                    "\t20m duck walks\n" +
+                    "\t10 Russian twists\n" +
+                    "Once five minutes is up, rest 3 minutes");
+            content.add("-As many rounds as possible in 5 minutes \n" +
+                    "\t10 sit ups\n" +
+                    "\t10 walking lunges with a twist\n" +
+                    "\t10 toe touches\n" +
+                    "Once five minutes is up, rest 3 minute");
+            content.add("-As many rounds as possible in 5 minutes\n" +
+                    "\t20 flutter kicks\n" +
+                    "\t20m bear crawl\n" +
+                    "\t20 leg raises\n");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Thursday Workout - Week 2";
-        description = " Sprints/ Push ups\n";
-        content = "Sprints: “Sixty One Twenty's” \n\n" +
-                "6 rounds\n\n" +
-                "All out Sprint for sixty seconds walk for two minutes.\n\n" +
-                "Push-ups: \n\n" +
-                "Push-ups to failure, jog 200m every time your knees touch the ground. Do this until you have completed 80 push ups\n";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Thursday Workout - Week 2";
+            description = " Sprints/ Push ups\n";
+            content = new ArrayList<>();
+            content.add("Sprints: “Sixty One Twenty's”                                                                \n" +
+                    "\t6 rounds\n" +
+                    "\tAll out Sprint for sixty seconds walk for two minutes.\n");
+            content.add("Push-ups to failure, jog 200m every time your knees touch the ground. Do this until you have completed 80 push ups\n");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        name = "Friday Workout - Week 2";
-        description = "EARN THE WEEKEND. Run recovery and bodyweight challenge\n";
-        content = "Run 2 miles, you choose the pace but try out those new legs and put some speed on it from time to time." +
-                " You’re working on running fast for a relatively short time, not slow and long, the difference is mechanics," +
-                " so you need to pretend you’re sprinting conservatively this will cause you to lead with your body and propel" +
-                " you forward unless you aim on leaving some teeth on the greenway.";
-        workout = new Workout(name, description, content);
-        mWorkouts.add(workout);
+            name = "Friday Workout - Week 2";
+            description = "EARN THE WEEKEND. Run recovery and bodyweight challenge\n";
+            content = new ArrayList<>();
+            content.add("Run 2 miles, you choose the pace but try out those new legs and put some speed on it from time to time." +
+                    " You’re working on running fast for a relatively short time, not slow and long, the difference is mechanics," +
+                    " so you need to pretend you’re sprinting conservatively this will cause you to lead with your body and propel" +
+                    " you forward unless you aim on leaving some teeth on the greenway.");
+            workout = new Workout(name, description, content);
+            mWorkouts.add(workout);
 
-        for (Workout w : mWorkouts) {
-            MainActivity.mDB.insertData(w.getName(), w.getDescription(), w.getContent(), w.isComplete());
+            for (Workout w : mWorkouts) {
+                MainActivity.mDB.insertData(w.getName(), w.getDescription(), w.getContent(), w.isComplete());
+            }
+            list.setPopulated(true);
         }
     }
 

@@ -16,22 +16,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private static final String TAG = "MainActivity";
 
     private static final int WORKOUTS_FRAGMENT = 0;
     private static final int STATS_FRAGMENT = 1;
     private static final int GROUPS_FRAGMENT = 2;
     private static final int TIPS_FRAGMENT = 3;
     private static final int SETTINGS_FRAGMENT = 4;
-
+    public static WorkoutDatabase mDB;
     public android.support.v4.app.FragmentManager mFragmentManager;
     public SharedPreferences mSharedPreferences;
     public Fragment mFragment;
     public FloatingActionButton mFloatingActionButton;
-    public static WorkoutDatabase mDB;
+    public ArrayList<Workout> mWorkouts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         mDB = new WorkoutDatabase(this);
+        mWorkouts = WorkoutsList.getInstance().getWorkouts();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -64,8 +67,15 @@ public class MainActivity extends AppCompatActivity
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: CURRENTLY ONLY SELECTS THE FIRST WORKOUT
-                mFragment = new WorkoutsDetailFragment(WorkoutsFragment.getWorkouts().get(0));
+                mFragment = new WorkoutsDetailFragment(mWorkouts.get(0));
+                for (int i = 0; i < mWorkouts.size(); i++) {
+                    Workout workout = mWorkouts.get(i);
+                    workout.setComplete(mSharedPreferences.getBoolean(workout.getName(), false));
+                    if (!workout.isComplete()) {
+                        mFragment = new WorkoutsDetailFragment(workout);
+                        break;
+                    }
+                }
                 mFragmentManager.beginTransaction()
                         .addToBackStack("test")
                         .replace(R.id.fragment_container, mFragment)
@@ -74,7 +84,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        updateFragment(WORKOUTS_FRAGMENT);
+        try {
+            updateFragment(WORKOUTS_FRAGMENT);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -86,11 +100,15 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
 
-        if (!mFragment.equals(new WorkoutsFragment())) {
-            for (int i = 0; i < mFragmentManager.getBackStackEntryCount(); i++) {
-                mFragmentManager.popBackStack();
+        try {
+            if (!mFragment.equals(new WorkoutsFragment())) {
+                for (int i = 0; i < mFragmentManager.getBackStackEntryCount(); i++) {
+                    mFragmentManager.popBackStack();
+                }
+                updateFragment(WORKOUTS_FRAGMENT);
             }
-            updateFragment(WORKOUTS_FRAGMENT);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
@@ -109,15 +127,35 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_workouts) {
-            updateFragment(WORKOUTS_FRAGMENT);
+            try {
+                updateFragment(WORKOUTS_FRAGMENT);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_stats) {
-            updateFragment(STATS_FRAGMENT);
+            try {
+                updateFragment(STATS_FRAGMENT);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_groups) {
-            updateFragment(GROUPS_FRAGMENT);
+            try {
+                updateFragment(GROUPS_FRAGMENT);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_tips) {
-            updateFragment(TIPS_FRAGMENT);
+            try {
+                updateFragment(TIPS_FRAGMENT);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_settings) {
-            updateFragment(SETTINGS_FRAGMENT);
+            try {
+                updateFragment(SETTINGS_FRAGMENT);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -130,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void updateFragment(int fragmentView) {
+    private void updateFragment(int fragmentView) throws JSONException {
         if (fragmentView == WORKOUTS_FRAGMENT) {
             mFragment = new WorkoutsFragment();
         } else if (fragmentView == STATS_FRAGMENT) {
