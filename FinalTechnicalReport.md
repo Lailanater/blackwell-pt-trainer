@@ -3,9 +3,12 @@
 ## 5-2-2018
 
 ### Abstract
-	Soldiers in the United States military are required to stay in top physical shape in order to do their jobs effectively. Soldiers are required to take a Physical Training Test (PT Test) that demonstrates that they are within the required physical standards. In the United State Army, the PT Test is structured around two minutes of max push-ups, two minutes of max situps, and a timed two mile run. The standards are based off of age and while most soldiers easily meet these requirements, some struggle. To combat this problem I developed an Android application that has the ability to keep users on a two week program in order to improve peak physical fitness. 
-	The areas in which the workout program focuses are core strength, and endurance. The workout program came from a friend of mine, Justin Perry. After he struggled to pass the PT Test his unit, Blackwell, gave him the workouts that are described in my application. Using this program Justin was able to pass his next PT Test and attested to the effectiveness of this program. 
-	This paper describes process of creating my Android application solution I call Blackwell PT Trainer. The application is a lightweight solution to achieving peak physical fitness and maintaining that level of fitness. Blackwell PT Trainer achieves a simple, effective way to keep track of your workouts, maintain a regular workout schedule, and has the capability to launch all of the tools needed to complete each workout.
+  Soldiers in the United States military are required to stay in top physical shape in order to do their jobs effectively. Soldiers are required to take a Physical Training Test (PT Test) that demonstrates that they are within the required physical standards. In the United State Army, the PT Test is structured around two minutes of max push-ups, two minutes of max situps, and a timed two mile run. The standards are based off of age and while most soldiers easily meet these requirements, some struggle. To combat this problem I developed an Android application that has the ability to keep users on a two week program in order to improve peak physical fitness. 
+
+The areas in which the workout program focuses are core strength, and endurance. The workout program came from a friend of mine, Justin Perry. After he struggled to pass the PT Test his unit, Blackwell, gave him the workouts that are described in my application. Using this program Justin was able to pass his next PT Test and attested to the effectiveness of this program. 
+
+This paper describes process of creating my Android application solution I call Blackwell PT Trainer. The application is a lightweight solution to achieving peak physical fitness and maintaining that level of fitness. Blackwell PT Trainer achieves a simple, effective way to keep track of your workouts, maintain a regular workout schedule, and has the capability to launch all of the tools needed to complete each workout.
+
 Table of Contents
 
 Introduction and Project Overview (800-1200 words)
