@@ -67,6 +67,17 @@ After solving the aforementioned problem Blackwell PT Trainer evolved from simpl
 
 Located below is a table of planned vs implemented features. Even though I had high expectations of the amount of features that I could implement I am still satisfied with the way Blackwell PT Trainer ended up. The application in its current form is still able to do everything that it needs to in order to be functional. The only feature that I wish I could have implemented before the end of the semester would have been the Facebook API support. Ideally it would have been awesome to be able to start a group to complete the program together with on Facebook and then be able to share your progress and statistics together in that group. This was something that my friend's unit wanted him to do to make sure he will keeping up with the program. I think adding that integration would have added a fun support system for people going through the program with someone else. Having a support system can help people stick to and accomplish their goals. Facebook is such a large social media platform at this point that almost everyone has a profile so that would increase the usability of such a feature.
 
+| Planned Features     | Implemented Features |
+| -------------------- | -------------------- |
+| Custom Icon          | Custom Icon          |
+| Database             | SharedPreferences    |
+| Tips Page            | Tips Page            |
+| Facebook Integration | GPS Tracking         |
+| Statistics Page      | Launch Timer App     |
+| Push Notifications   |                      |
+| GPS Tracking         |                      |
+| Built-in Timers      |                      |
+
 ### Conclusions and Future Work
 
 ### References
