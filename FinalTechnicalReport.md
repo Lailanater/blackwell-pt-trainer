@@ -17,13 +17,18 @@ This paper describes process of creating my Android application solution I call 
 * [Value]()
 * [Problem Scope]()
 * [Features]()
+
 [Design, Development and Test]()
 * [Design]()
 * [Development]()
 * [Test]()
+
 [Results]()
+
 [Conclusions and Future Work]()
+
 [References]()
+
 [Appendices]()
 
 ### Introduction and Project Overview
