@@ -9,6 +9,8 @@ The areas in which the workout program focuses are core strength, and endurance.
 
 This paper describes process of creating my Android application solution I call Blackwell PT Trainer. The application is a lightweight solution to achieving peak physical fitness and maintaining that level of fitness. Blackwell PT Trainer achieves a simple, effective way to keep track of your workouts, maintain a regular workout schedule, and has the capability to launch all of the tools needed to complete each workout.
 
+Key Words: Android Studio, Android, Workouts, WorkoutsList, WorkoutsDetailFragment, Blackwell PT Trainer, Fragment, Activity
+
 ### Table of Contents
 
 [Introduction and Project Overview](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#introduction-and-project-overview)
