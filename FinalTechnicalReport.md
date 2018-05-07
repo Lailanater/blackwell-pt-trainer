@@ -12,24 +12,24 @@ This paper describes process of creating my Android application solution I call 
 ### Table of Contents
 
 [Introduction and Project Overview](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#introduction-and-project-overview)
-* [Problem and Objectives]()
-* [Potential Users]()
-* [Value]()
-* [Problem Scope]()
-* [Features]()
+* [Problem and Objectives](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#problem-and-objectives)
+* [Potential Users](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#potential-users)
+* [Value](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#value)
+* [Problem Scope](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#problem-scope)
+* [Features](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#features)
 
 [Design, Development and Test]()
-* [Design]()
-* [Development]()
-* [Test]()
+* [Design](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#design)
+* [Development](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#development)
+* [Test](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#test)
 
-[Results]()
+[Results](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#results)
 
-[Conclusions and Future Work]()
+[Conclusions and Future Work](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#conclusions-and-future-work)
 
-[References]()
+[References](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#references)
 
-[Appendices]()
+[Appendices](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#appendices)
 
 ### Introduction and Project Overview
 
