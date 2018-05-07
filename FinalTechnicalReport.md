@@ -79,6 +79,9 @@ Located below is a table of planned vs implemented features. Even though I had h
 | Built-in Timers      |                      |
 
 ### Conclusions and Future Work
+Before the creation of Blackwell PT Trainer many soldiers in the US military that struggle to pass the PT Test had to create their own workouts in the hopes of improving their scores. The workouts that these soldiers need are supposed to be challenging in order to change their level of physical fitness. Now Blackwell PT Trainer is a viable solution that can help gives soldiers a plan and structure to their workouts with a program that is targeted towards fast results. The application allows the user to input when they have finished different parts of a workout and save their progress. Blackwell PT Trainer is a simple, effective solution to a problem that has never been tackled in the phone application realm before.
+
+Some lessons that I have learned from the Blackwell PT Trainer project would be test driven development, and writing clean code will increase productivity and understanding when reviewing old code.
 
 ### References
 
