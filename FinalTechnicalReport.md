@@ -109,5 +109,4 @@ Blackwell PT Trainer is a unique application that I hope to work more on in the 
 
 ### Appendices
 
-![Figure 1](/capstone/Final Technical Report Figures/Screenshot_20180506-210959.png?raw=true "Optional Title")
-
+![Test]()
