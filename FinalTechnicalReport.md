@@ -111,24 +111,24 @@ Blackwell PT Trainer is a unique application that I hope to work more on in the 
 
 ![Figure1](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-210959.png)
 
-##### Figure 1
+## Figure 1
 
 ![Figure2](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-211006.png)
 
-##### Figure 2
+## Figure 2
 
 ![Figure3](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-211015.png)
 
-##### Figure 3
+## Figure 3
 
 ![Figure4](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-211021.png)
 
-##### Figure 4
+## Figure 4
 
 ![Figure5](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-211026.png)
 
-##### Figure 5
+## Figure 5
 
 ![Figure6](https://github.com/Lailanater56/capstone/blob/master/Final%20Technical%20Report%20Figures/Screenshot_20180506-211040.png)
 
-##### Figure 6
+## Figure 6
