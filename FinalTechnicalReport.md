@@ -108,12 +108,19 @@ Blackwell PT Trainer is a unique application that I hope to work more on in the 
 ### References
 
 [1] https://developer.android.com/guide/
+
 [2] https://www.youtube.com/user/androiddevelopers
+
 [3] https://developer.android.com/studio/
+
 [4] https://www.bignerdranch.com/books/android-programming/
+
 [5] https://github.com/Lailanater56/capstone/blob/master/app/src/main/java/com/lailperry/android/blackwellpttrainer/Workout.java
+
 [6] https://github.com/Lailanater56/capstone/blob/master/app/src/main/java/com/lailperry/android/blackwellpttrainer/WorkoutsDetailFragment.java
+
 [7] https://github.com/Lailanater56/capstone/blob/master/app/src/main/java/com/lailperry/android/blackwellpttrainer/WorkoutsList.java
+
 [8] https://github.com/Lailanater56/capstone/blob/master/app/src/main/java/com/lailperry/android/blackwellpttrainer/MainActivity.java
 
 ### Appendices
