@@ -132,19 +132,7 @@ public class MainActivity extends AppCompatActivity
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else if (id == R.id.nav_stats) {
-            try {
-                updateFragment(STATS_FRAGMENT);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else if (id == R.id.nav_groups) {
-            try {
-                updateFragment(GROUPS_FRAGMENT);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else if (id == R.id.nav_tips) {
+        }  else if (id == R.id.nav_tips) {
             try {
                 updateFragment(TIPS_FRAGMENT);
             } catch (JSONException e) {

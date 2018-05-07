@@ -6,14 +6,6 @@
         android:title="Workouts" />
 
     <item
-        android:id="@+id/nav_stats"
-        android:title="Stats"/>
-
-    <item
-        android:id="@+id/nav_groups"
-        android:title="Groups"/>
-
-    <item
         android:id="@+id/nav_tips"
         android:title="Tips"/>
 
