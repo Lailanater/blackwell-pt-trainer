@@ -18,7 +18,7 @@ This paper describes process of creating my Android application solution I call 
 * [Problem Scope](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#problem-scope)
 * [Features](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#features)
 
-[Design, Development and Test]()
+[Design, Development and Test](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#design-development-and-test)
 * [Design](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#design)
 * [Development](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#development)
 * [Test](https://github.com/Lailanater56/capstone/blob/master/FinalTechnicalReport.md#test)
