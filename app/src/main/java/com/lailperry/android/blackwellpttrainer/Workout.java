@@ -7,13 +7,13 @@ import java.util.UUID;
  * Created by Owner on 2/13/2018.
  */
 
-public class Workout {
+class Workout {
 
-    String mName;
-    String mDescription;
-    ArrayList<String> mContent;
-    boolean mComplete;
-    UUID id;
+    private String mName;
+    private String mDescription;
+    private ArrayList<String> mContent;
+    private boolean mComplete;
+    private UUID id;
 
     public Workout(String workoutName, String workoutDescription, ArrayList<String> workoutContent) {
         mName = workoutName;

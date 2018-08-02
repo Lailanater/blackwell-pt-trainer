@@ -3,9 +3,11 @@ package com.lailperry.android.blackwellpttrainer;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.AlarmClock;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
@@ -15,10 +17,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.fitness.Fitness;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -32,9 +36,9 @@ public class WorkoutsDetailFragment extends Fragment {
     private TextView mWorkoutDescription;
     private Button mStartTimerButton;
     private Button mBeginRunButton;
-    private Workout mWorkout;
+    private final Workout mWorkout;
     private SharedPreferences mSharedPreferences;
-    private ArrayList<CheckBox> mAllCheckboxes = new ArrayList<>();
+    private final ArrayList<CheckBox> mAllCheckboxes = new ArrayList<>();
     private LinearLayout mDividerLine;
 
     @SuppressLint("ValidFragment")
@@ -44,7 +48,7 @@ public class WorkoutsDetailFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_workouts_detail, container, false);
@@ -75,12 +79,17 @@ public class WorkoutsDetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = createFitnessIntent();
-                startActivity(intent);
+                PackageManager packageManager = Objects.requireNonNull(getActivity()).getPackageManager();
+                if (intent.resolveActivity(packageManager) != null)
+                    startActivity(intent);
+                else {
+                    Toast.makeText(getContext(), "There is no fitness app installed. Please install Google Fit from the Play Store.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    public Intent createFitnessIntent() {
+    private Intent createFitnessIntent() {
         Intent intent = new Intent(Fitness.ACTION_TRACK);
         intent.setType("vnd.google.fitness.activity/running");
         intent.putExtra("actionStatus", "ActiveActionStatus");
@@ -141,7 +150,7 @@ public class WorkoutsDetailFragment extends Fragment {
         return flag;
     }
 
-    public void initializeViews(View v) {
+    private void initializeViews(View v) {
         mLinearLayout = v.findViewById(R.id.workoutDetailContentLinearLayout);
         mWorkoutName = v.findViewById(R.id.workoutNameTextView);
         mWorkoutName.setText(mWorkout.getName());

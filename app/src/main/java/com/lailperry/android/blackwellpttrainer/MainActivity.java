@@ -1,9 +1,9 @@
 package com.lailperry.android.blackwellpttrainer;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity
     private static final int TIPS_FRAGMENT = 3;
     private static final int SETTINGS_FRAGMENT = 4;
     public static WorkoutDatabase mDB;
-    public android.support.v4.app.FragmentManager mFragmentManager;
-    public SharedPreferences mSharedPreferences;
-    public Fragment mFragment;
-    public FloatingActionButton mFloatingActionButton;
-    public ArrayList<Workout> mWorkouts;
+    private android.support.v4.app.FragmentManager mFragmentManager = getSupportFragmentManager();
+    private SharedPreferences mSharedPreferences;
+    private Fragment mFragment;
+    private FloatingActionButton mFloatingActionButton;
+    private ArrayList<Workout> mWorkouts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         mDB = new WorkoutDatabase(this);
+
         mWorkouts = WorkoutsList.getInstance().getWorkouts();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -111,39 +113,37 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-        if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
-            mFloatingActionButton.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        setFloatingActionButtonVisibility();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_workouts) {
-            try {
-                updateFragment(WORKOUTS_FRAGMENT);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }  else if (id == R.id.nav_tips) {
-            try {
-                updateFragment(TIPS_FRAGMENT);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else if (id == R.id.nav_settings) {
-            try {
-                updateFragment(SETTINGS_FRAGMENT);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        switch (id) {
+            case R.id.nav_workouts:
+                try {
+                    updateFragment(WORKOUTS_FRAGMENT);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.nav_tips:
+                try {
+                    updateFragment(TIPS_FRAGMENT);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.nav_settings:
+                try {
+                    updateFragment(SETTINGS_FRAGMENT);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -151,24 +151,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
     private void updateFragment(int fragmentView) throws JSONException {
-        if (fragmentView == WORKOUTS_FRAGMENT) {
-            mFragment = new WorkoutsFragment();
-        } else if (fragmentView == STATS_FRAGMENT) {
-            mFragment = new StatsFragment();
-        } else if (fragmentView == GROUPS_FRAGMENT) {
-            mFragment = new GroupsFragment();
-        } else if (fragmentView == TIPS_FRAGMENT) {
-            mFragment = new TipsFragment();
-        } else if (fragmentView == SETTINGS_FRAGMENT) {
-            mFragment = new SettingsFragment();
-        }
-        mFragmentManager = getSupportFragmentManager();
+        setFragmentFromFragmentView(fragmentView);
 
         if (fragmentView != WORKOUTS_FRAGMENT) {
             mFragmentManager.beginTransaction()
@@ -181,8 +165,32 @@ public class MainActivity extends AppCompatActivity
                     .commit();
         }
 
+        setFloatingActionButtonVisibility();
+    }
+
+    private void setFloatingActionButtonVisibility() {
         if (mFloatingActionButton.getVisibility() == View.INVISIBLE)
             mFloatingActionButton.setVisibility(View.VISIBLE);
+    }
+
+    private void setFragmentFromFragmentView(int fragmentView) throws JSONException {
+        switch (fragmentView) {
+            case WORKOUTS_FRAGMENT:
+                mFragment = new WorkoutsFragment();
+                break;
+            case STATS_FRAGMENT:
+                mFragment = new StatsFragment();
+                break;
+            case GROUPS_FRAGMENT:
+                mFragment = new GroupsFragment();
+                break;
+            case TIPS_FRAGMENT:
+                mFragment = new TipsFragment();
+                break;
+            case SETTINGS_FRAGMENT:
+                mFragment = new SettingsFragment();
+                break;
+        }
     }
 
 }

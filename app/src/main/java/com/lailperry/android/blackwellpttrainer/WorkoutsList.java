@@ -8,11 +8,11 @@ class WorkoutsList {
     private boolean isPopulated;
 
     private WorkoutsList() {
-        mWorkouts = new ArrayList<Workout>();
+        mWorkouts = new ArrayList<>();
         isPopulated = false;
     }
 
-    static WorkoutsList getInstance() {
+    public static WorkoutsList getInstance() {
         return ourInstance;
     }
 

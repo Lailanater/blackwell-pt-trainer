@@ -41,7 +41,7 @@ public class WorkoutDatabase extends SQLiteOpenHelper {
         // Upgrade code goes here
     }
 
-    public boolean insertData(String name, String description, ArrayList<String> content, boolean completed) throws JSONException {
+    public void insertData(String name, String description, ArrayList<String> content, boolean completed) throws JSONException {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(FIELD_NAME, name);
@@ -52,9 +52,5 @@ public class WorkoutDatabase extends SQLiteOpenHelper {
         contentValues.put(FIELD_CONTENT, arrayList);
         contentValues.put(FIELD_COMPLETED, completed);
         long result = db.insert(TABLE_WORKOUTS, null, contentValues);
-        if (result == -1) {
-            return false;
-        }
-        return true;
     }
 }
